@@ -292,27 +292,4 @@ public class WebTest {
 
         driver.quit();
     }
-
-    @Test
-    public void testImportantWhiteLettersBoldFontRedBackgroundAllLettersCapital() {
-
-        String chromeDriver = "webdriver.chrome.driver";
-        String driverPath = "C:\\chromedriver_win32\\chromedriver.exe";
-        String url = "http://www.99-bottles-of-beer.net/submitnewlanguage.html ";
-        String expectedResult = "IMPORTANT:";
-
-        System.setProperty(chromeDriver, driverPath);
-        WebDriver driver = new ChromeDriver();
-
-        driver.get(url);
-
-        WebElement Span = driver.findElement(
-                By.xpath("//body/div[@id='wrap']/div[@id='main']/ul/li/span/b"));
-
-        String actualResult = Span.getText();
-
-        Assert.assertEquals(actualResult, expectedResult);
-
-        driver.quit();
-    }
 }
